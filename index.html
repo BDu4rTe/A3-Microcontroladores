@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VasoTeste</title>
+    
+    <link rel="stylesheet/less" type="text/css" href="styles.less">
+</head>
+<body>
+    <header class="cabecalho">
+        <ion-icon class="icon" name="leaf" id="titulo-icon"></ion-icon>
+        <text class="name">Vaso Inteligente</text>
+    </header>
+
+    <main class="conteudo">
+        <section class="section-principal">
+            <section class="section-graficos">
+
+                <div class="grafico-gauge">
+                    <div class="gauge">
+                        <div class="gauge-fill" id="temperatura"></div>
+                        <div class="gauge-cover">
+                            <t id="temperatura-text">50°</t>
+                            <ion-icon name="thermometer" id="temperatura-icon"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <div class="grafico">
+                    <div id="media">
+
+                    </div>
+                </div> -->
+
+                <div class="grafico-gauge">
+                    <div class="gauge">
+                        <div class="gauge-fill" id="luz"></div>
+                        <div class="gauge-cover">
+                            <t id="luz-text">50</t>
+                            <ion-icon name="sunny" id="luz-icon"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grafico-gauge">
+                    <div class="gauge">
+                        <div class="gauge-fill" id="umidade"></div>
+                        <div class="gauge-cover">
+                            <t id="umidade-text">50%</t>
+                            <ion-icon class="icon" name="water" id="umidade-icon"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+        </section>
+
+        <footer class="footer">
+            <p class="footer-texto">
+                Lorem ipsum etiam faucibus sollicitudin commodo euismod nullam, 
+                laoreet diam ultricies nostra ac elementum nulla quisque, id aenean 
+                diam tortor in aenean. erat ad vel sem torquent posuere vitae elit nisl aenean, 
+                dictum diam purus dolor commodo sed quisque mauris bibendum ad.
+            </p>
+            <div class="github-icon">
+                <a href=""><img id="github-img" src="assets/github.png" ></a>
+            </div>
+        </footer>
+    </main>
+</body>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins&display=swap');
+</style>
+<script src="main.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
