@@ -1,15 +1,15 @@
-const gaugeElement = document.querySelector(".grafico-gauge");
-
-function setGaugeFill(param, fill){
+function setGaugeFill(param, fill, complemento=null){
     if (fill <0 || fill > 1){
         return;
     }
     console.log("#" + param);
-    gaugeElement.querySelector("#" + param).style.transform = `rotate(${fill / 2}turn)`;
-    gaugeElement.querySelector("#" + param + "-text").textContent = param == umidade ? `${Math.round(fill * 100)}%` : `${Math.round(fill * 100)}°` ;
+    document.getElementById(param).style.transform = `rotate(${fill / 2}turn)`;
+    document.getElementById(param + "-text").textContent = `${Math.round(fill * 100) + complemento}`;
 }
 
-setGaugeFill("umidade", 0.2); 
-console.log("umidade");
+setGaugeFill("luz", 0.45); 
+setGaugeFill("temperatura", 0.24, "°"); 
+setGaugeFill("umidade", 0.68, "%"); 
+console.log("passou");
 
 // fazer comunicacao com o protocolo mqtt
