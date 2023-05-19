@@ -1,16 +1,10 @@
 function setGaugeFill(param, fill, complemento=null){
-    if (fill <0 || fill > 1){
-        return;
-    }
-    console.log("#" + param);
-    document.getElementById(param).style.transform = `rotate(${fill / 2}turn)`;
-    document.getElementById(param + "-text").textContent = `${Math.round(fill * 100) + complemento}`;
+    let realfill = fill * (360 / 100);
+    document.getElementById(param).style.background = param == "umidade" ? `conic-gradient(#95C4E8 ${realfill}deg, #4C515C 0deg)` : `conic-gradient(#E87D4F ${realfill}deg, #4C515C 0deg)`  ;
+    document.getElementById(param + "-text").textContent = `${fill + complemento}`;
 }
 
-setGaugeFill("luz", 0.45); 
-setGaugeFill("temperatura", 0.24, "°"); 
-setGaugeFill("umidade", 0.68, "%"); 
-console.log("passou");
-
+setGaugeFill("temperatura", 24, "°");
+setGaugeFill("umidade", 68, "%");
 // fazer comunicacao com o protocolo mqtt
 
