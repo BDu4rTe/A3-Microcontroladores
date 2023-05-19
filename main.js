@@ -13,3 +13,4 @@ setGaugeFill("umidade", 0.68, "%");
 console.log("passou");
 
 // fazer comunicacao com o protocolo mqtt
+
