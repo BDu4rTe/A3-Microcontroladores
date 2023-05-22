@@ -1,16 +1,16 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
 @primary :  #19262C;
 @secondary: #4C515C;
 @temp-color: #E87D4F;
 @sun-color: #FCB941;
 @umid-color: #95C4E8;
 @text-color: #E6F4FA;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
 
 body{
     font-size: 100%;  
@@ -19,10 +19,31 @@ body{
 
 .cabecalho{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
     gap: 10px;
-    border-bottom: @text-color 1px solid;
+    z-index: 1000;
+}
+
+.menu-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 32px;
+    z-index: 10001;
+}
+
+.menu-nav a{
+    color: @text-color;
+    font-weight: 600;
+    font-size: 20px;
+    border-bottom: 2px solid transparent;
+    transition: all .55s ease;
+}
+
+.menu-nav a:hover{
+    border-bottom: 2px solid @text-color;
 }
 
 .conteudo{
@@ -30,7 +51,7 @@ body{
 }
 
 .name{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 48px;
     color: @text-color;
@@ -45,6 +66,13 @@ body{
 
 .icon{
     color: @text-color;
+}
+
+#menu-icon{
+    font-size: 35px;
+    cursor: pointer;
+    display: none;
+    transition: all .55s ease;
 }
 
 #umidade-icon{
@@ -88,7 +116,7 @@ body{
 }
 
 .gauge-cover{
-    position: absolute;
+    position: relative;
     height: 210px;
     width: 210px;
     border-radius: 50%;
@@ -119,7 +147,6 @@ body{
     align-items: center;
     gap: 24px;
     padding: 24px;
-    border-top: @text-color 1px solid;
 
     /* =====Text===== */
     font-family: 'Poppins', sans-serif;
@@ -130,9 +157,41 @@ body{
 
 .footer-texto{
     max-width: 900px;
+    text-align: center;
 }
 
 #github-img{
     width: 80px;
     height: 80px;
+}
+
+/* =====Media===== */
+
+@media (max-width: 990px) {
+    #menu-icon{
+        display: block;
+    }
+
+    .menu-nav{
+        position: absolute;
+        top: 7%;
+        right: 0;
+        width: 200px;
+        height: 40vh;
+        background: @secondary;
+        display: none;
+        align-items: center;
+        flex-direction: column;
+        padding: 50px 20px;
+        transition: all .55s ease;
+    }
+    .menu-nav.open{
+        display: flex;
+    }
+
+    .section-graficos{
+        flex-direction: column;
+        align-items: center;
+    }
+
 }
